@@ -21,10 +21,10 @@ function addListener(canvasID) {
             showMessage("");
             let rect = canvas.getBoundingClientRect();
 
-            click_x = event.clientX - rect.right + rect.width / 2;
-            click_y = rect.bottom - event.clientY - rect.height / 2;
-            click_x /= rect.height * 0.1;
-            click_y /= rect.width * 0.1;
+            click_x = event.clientX - rect.left - 150;
+            click_y = 150 - (event.clientY - rect.top);
+            click_x /= 20;
+            click_y /= 20;
             console.log("X: " + click_x);
             console.log("Y: " + click_y);
             sendRequest();

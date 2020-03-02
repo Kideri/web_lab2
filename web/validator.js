@@ -36,7 +36,7 @@ function validateY() {
 
     let text = input_field.value;
 
-    let match = text.match(/^-?[0-2]([,.]\d+)?$|^3([,.]0+)?$|^-[3-4]([,.]\d+)?|^-5([,.]0+)?$/);
+    let match = text.match(/^-?[0-4]([,.]\d+)?$|^5([,.]0+)?$|^-[3-4]([,.]\d+)?|^-5([,.]0+)?$/);
 
     if (match == null) {
         input_field.classList.remove("valid_field");

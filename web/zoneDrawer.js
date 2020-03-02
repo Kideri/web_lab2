@@ -27,12 +27,12 @@ function drawZone(radius) {
     ctx.strokeStyle = "#03A9F4";
 
     ctx.beginPath();
-    ctx.arc(150, 150, radius * 20, 0, Math.PI / 2, false); // круг
+    ctx.arc(150, 150, radius * 10, 0, Math.PI / 2, false); // круг
     ctx.lineTo(150, 150);
     ctx.fill();
     ctx.fillRect(150 - radius * 20, 150, radius * 20, radius * 20); // прямоугольник
-    ctx.moveTo(150, 150 - radius * 20);
-    ctx.lineTo(150 + radius * 20, 150);
+    ctx.moveTo(150, 150 - radius * 10);
+    ctx.lineTo(150 + radius * 10, 150);
     ctx.lineTo(150, 150);
     ctx.fill();
     ctx.closePath();
@@ -109,7 +109,7 @@ function sign(context, radius) {
 }
 
 function check(pointX, pointY, currentR) {
-    if (pointX >= 0 && pointY >= 0 && -1 * pointY >= pointX - currentR) return true;
+    if (pointX >= 0 && pointY >= 0 && -1 * pointY >= pointX - currentR / 2) return true;
     if (pointX >= -currentR && pointX <= 0 && pointY <= 0 && pointY >= -currentR) return true;
     return pointX >= 0 && pointY <= 0 && pointX * pointX + pointY * pointY <= currentR * currentR / 4;
 }
@@ -135,6 +135,6 @@ function drawPoint(relX, relY, color) {
     let context = canvas.getContext("2d");
     context.fillStyle = color;
     context.beginPath();
-    context.arc(relX * 30 + 150, 150 - relY * 30, 4, 0, 2 * Math.PI);
+    context.arc(relX * 20 + 150, 150 - relY * 20, 4, 0, 2 * Math.PI);
     context.fill();
 }
